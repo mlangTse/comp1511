@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main(void){
+    int ch = getchar();
+    int check = ' ';
+    int line = 0;
+    int words = 0;
+    int n_ch = 0;
+    while (ch != EOF){
+        if (ch == '\n'){
+            line++;
+        }
+        if ((check == ' ' || check == '\n') && ch != ' ' && ch != '\n'){
+            words++;
+        }
+        n_ch++;
+        check = ch;
+        ch = getchar();
+    }   
+    printf("%d lines %d words %d characters\n", line, words, n_ch);
+    return 0;
+}
+

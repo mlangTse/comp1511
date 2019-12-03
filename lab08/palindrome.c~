@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LINE 4096
+
+int main(void){
+    char line[MAX_LINE];
+    int length = 0;
+    int count = 0;
+    printf("Enter a string: ");
+    while(fgets(line, MAX_LINE, stdin) != NULL){
+    }
+    length = strlen(line) - 1;
+    printf("%d\n", length);
+    for (int i = 0; i < length / 2; i++){
+        if (line[i] == line[length - 1 - i]){
+            count++;
+        }
+    }
+    if (count == length / 2){
+        printf("String is a palindrome\n");
+    } else {
+        printf("String is not a palindrome\n");
+    } 
+  
+    return 0;
+}    
