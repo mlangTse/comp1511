@@ -1,0 +1,61 @@
+// COMP1511 Week 5 Lab: Vector Permutation
+//
+// This program was written by MINGLANG XIE (z5228006)
+// on 17/03/2019
+//
+// This program that: reads a positive integer n, reads n integers p0 p1 ... pn - 1 and reads n integers q0 q1 ... qn - 1
+//checks q0 ... qn - 1 are non-negative integers less than n
+//prints pq0, pq1 ... pqn - 1
+
+#include <stdio.h>
+
+void vector_permutation(int length, int vector[length], int permutation[length]){
+    int vector3[length];
+    int k = 0;
+    while (k < length){
+        vector3[k] = vector[permutation[k]];  
+        k = k + 1;
+    }    
+    
+    int l = 0;
+    while (l < length){
+        printf("%d ", vector3[l]);
+        l = l + 1;
+    }
+}
+
+int main (void){
+    int length;
+    printf("Enter vector length: ");
+    scanf("%d", &length);
+    
+    printf("Enter vector: ");
+    int vector[length];
+    int i = 0;
+    while (i < length){
+        scanf("%d", &vector[i]);
+        i = i + 1;
+    }
+    
+    int check = 1;
+    printf("Enter permutation: ");
+    int permutation[length];
+    int j = 0;
+    while (j < length){
+        scanf("%d", &permutation[j]);
+        if (permutation[j] > length - 1){
+            check = 0;
+        }
+        j = j + 1;
+    } 
+    
+    if (check == 1){
+        vector_permutation(length, vector, permutation);
+    } else {
+        printf("Invalid permutation");
+    }       
+    
+    printf("\n");    
+    return 0;
+}
+
