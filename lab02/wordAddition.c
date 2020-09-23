@@ -145,3 +145,57 @@ int main(void){
     }
     return 0;
     }
+
+/*
+the other version by using loop
+#include <stdio.h>
+
+int main(void) {
+    int num1, num2, added;
+    printf("Please enter two integers:");
+    scanf("%d%d", &num1, &num2);
+
+    added = num1 + num2;
+    int nums[3] = {num1, num2, added};
+
+    for (int i = 0; i < 3; i++) {
+        if (nums[i] < 0 && nums[i] <= 10 && nums[i] >= -10) {
+            nums[i] *= -1;
+            printf("negative ");
+        } else if (nums[i] > 10 || nums[i] < -10){
+            printf("%d ", nums[i]);
+        }
+        if(nums[i] == 0){
+            printf("zero ");
+        } else if(nums[i] == 10){
+            printf("ten ");
+        } else if(nums[i] == 9){
+            printf("nine ");
+        } else if(nums[i] == 8){
+            printf("eight ");
+        } else if(nums[i] == 7){
+            printf("seven ");
+        } else if(nums[i] == 6){
+            printf("six ");
+        } else if(nums[i] == 5){
+            printf("five ");
+        } else if(nums[i] == 4){
+            printf("four ");
+        } else if(nums[i] == 3){
+            printf("three ");
+        } else if(nums[i] == 2){
+            printf("two ");
+        } else if(nums[i] == 1){
+            printf("one ");
+        }
+        if (i == 0) {
+            printf("+ ");
+        } else if (i == 1) {
+            printf("= ");
+        } else {
+            printf("\n");
+        }
+    }
+    return 0;
+}
+*/
